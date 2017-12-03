@@ -37,7 +37,7 @@
                         <li role=presentation><a href="/docs/5.5/" title="Laravel中文文档" target="_blank">Laravel中文文档</a></li>
                         <li role=presentation><a href="/docs/2/" title="Lumen中文文档" target="_blank">Lumen中文文档</a></li>
                         <li role=presentation><a href="/specials/4" title="APP下载" target="_blank">APP下载</a></li>
-                    </ul>
+        </ul>
     </div>
 </div>
 <div class="main-content">
