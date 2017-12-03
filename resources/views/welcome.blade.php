@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel Artisan-专业的Laravel学习交流平台。- Laravel学习网</title>
+    <title>labelaravel学习网</title>
     <meta name="keywords" content="Laravel学习网,Laravel5.5,Laravel,Lumen中文网,Php Artisan,Laravel教程,Laravel视频" />
     <meta name="description" content="Laravel学习网,主要用于学习php框架排行榜第一的laravel框架和lumen框架，包含laravel视频教程，laravel中文文档，laravel拓展包以及使用教程，致力于推动 Laravel，PHP7、php-fig，composer 等 PHP 新技术" />
     <meta name="360-site-verification" content="8ecbce7e3155bd2925eb4d302822fd61" />
