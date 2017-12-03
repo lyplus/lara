@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <title>labelaravel学习网</title>
-    <meta name="keywords" content="Laravel学习网,Laravel5.5,Laravel,Lumen中文网,Php Artisan,Laravel教程,Laravel视频" />
-    <meta name="description" content="Laravel学习网,主要用于学习php框架排行榜第一的laravel框架和lumen框架，包含laravel视频教程，laravel中文文档，laravel拓展包以及使用教程，致力于推动 Laravel，PHP7、php-fig，composer 等 PHP 新技术" />
-    <meta name="360-site-verification" content="8ecbce7e3155bd2925eb4d302822fd61" />
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link rel="stylesheet" href="https://phpartisan.cn/bootstrap/css/bootstrap.min.css">
+    <meta name="keywords" content="Laravel学习网,Laravel5.5,Laravel,Laravel教程,Laravel视频" />
+    <meta name="description" content="包含laravel5.5视频教程，laravel中文文档，laravel拓展包以及使用教程，致力于推动 Laravel，PHP7，composer等PHP新技术" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://phpartisan.cn/css/index.css">
     <link rel="stylesheet" href="https://phpartisan.cn/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://phpartisan.cn/fonts/iconfont.css">
-    <script src="https://phpartisan.cn/vendor/jquery-1.11.1.min.js"></script>
-    <script src="https://phpartisan.cn/bootstrap/js/bootstrap.js"></script>
-    <script src="https://phpartisan.cn/js/common.js"></script>
     </head>
 <body>
 <div class="main-header">
@@ -231,20 +230,25 @@ Guzzle可以使用cookies请求参数为你维护一个cookie会话，当发送�
     <div class="main-footer-footer">
         Copyright © <a>Laravel学习网 </a>| 京ICP备17031240号-2 | erarpls技术支持
         <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+      </script>
     </div>
 </div>
+<script src="{{ asset('js/app.js') }}"></script>
+
+<script src="https://phpartisan.cn/vendor/jquery-1.11.1.min.js"></script>
+<script src="https://phpartisan.cn/bootstrap/js/bootstrap.js"></script>
+<script src="https://phpartisan.cn/js/common.js"></script>
 </body>
 </html>
