@@ -4,10 +4,6 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-.nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color: #161617;
-}
 
 html,body{
     margin: 0px;
@@ -15,7 +11,6 @@ html,body{
     background-color: #ebebeb;
     // background-image: url(../img/bg.jpg);
     background-size: 100% auto;
-    font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
 }
 pre,code{
     border: none;
@@ -46,7 +41,7 @@ a:hover{
 }
 .main-header-top-line{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     height: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -66,27 +61,25 @@ a:hover{
 .main-header-top-line ul{
     display: block;
     width: auto;
-    float: left;
+    float: right;
     color: #FFFFFF;
 }
 .main-header-top-line li{
-    float: left;
+    float: right;
     width: auto;
-    padding-left: 5px;
+    padding-left: 40px;
     line-height: 50px;
 }
 .main-header-top-line li a{
     color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
 }
 .main-header-top-line li a:hover{
-    // font-weight: bold;
+    font-weight: 400;
 }
-
 .main-header-content{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -198,15 +191,13 @@ a:hover{
 .main-header-top-line li a{
     color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
 }
 .main-header-top-line li a:hover{
-    // font-weight: bold;
+    font-weight: 400;
 }
-
 .main-header-content{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -332,7 +323,7 @@ a:hover{
 }
 .main-navigation-content{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     height: auto;
     float: left;
     background-color: #FFFFFF;
@@ -383,7 +374,7 @@ a:hover{
 }
 .main-navigation-content{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     height: 60px;
     background-color: #FFFFFF;
     text-align: center;
@@ -426,7 +417,7 @@ a:hover{
     text-decoration: none;
 }
 .main-content{
-    max-width: 1200px;
+    max-width: 1100px;
     width: 100%;
     height: auto;
     margin-left: auto;
@@ -1018,7 +1009,7 @@ a:hover{
 }
 .main-footer-content{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1176,7 +1167,7 @@ a:hover{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1100px;
 }
 .document-header-main-logo{
     height: 60px;
@@ -1209,7 +1200,7 @@ a:hover{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1100px;
 }
 .document-content-left{
     width: 20%;
@@ -1354,7 +1345,7 @@ a:hover{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1100px;
 }
 .document-footer-main ul{
     width: 100%;
@@ -1456,7 +1447,7 @@ a:hover{
 
 /*specials start*/
 .specials{
-    max-width: 1200px;
+    max-width: 1100px;
 }
 .specials table{
     width: 100%;
