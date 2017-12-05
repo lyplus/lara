@@ -1,35 +1,45 @@
 <div class="main-header">
     <div class="main-header-top-line">
-        <a href="/"><img src="https://phpartisan.cn/img/logo2.png"></a>
+        <a class="logo" href="{{ url('/') }}" title="{{ env('APP_NAME', 'Laravel') }}"><img src="/images/logo.png" title="{{config('app.name')}}" alt="攻城狮123社区"></a>
         <span class="glyphicon glyphicon-option-vertical" onclick="navigation();"></span>
-        <ul class="nav navbar-nav">
-          <li><a href="{{ url('/') }}" title="首页" target="_blank">首页</a></li>
-          <li><a href="https://phpartisan.cn/specials/1">PHP</a></li>
-          <li><a href="https://phpartisan.cn/submission">Python</a></li>
-          <li><a href="https://phpartisan.cn/specials/3">开源项目</a></li>
-          <li><a href="https://phpartisan.cn/specials/2">Laravel拓展</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <!-- Authentication Links -->
-            <li><a href="#">登录</a></li>
-            <li><a href="#">注册</a></li>
-        </ul>
-        <form action="/search" class="navbar-form navbar-right" style="margin-top:10px;" _lpchecked="1">
-        <div class="form-group has-feedback">
-          <input class="form-control input-sm" name="keyword" placeholder="搜索内容" type="text" value="">
-          <i class="glyphicon glyphicon-search form-control-feedback"></i>
-        </div>
-      </form>
-    </div>
-</div>
-<div class="main-navigation">
-    <div class="main-navigation-content">
-        <span class="main-navigation-content-menu glyphicon glyphicon-align-justify" onclick="mainmenu();" style="font-size: 18px;line-height: 60px;"></span>
-        <ul>
-                        <li role=presentation><a href="/" title="首页" target="_blank">首页</a></li>
-                        <li role=presentation><a href="/docs/5.5/" title="Laravel中文文档" target="_blank">Laravel中文文档</a></li>
-                        <li role=presentation><a href="/docs/2/" title="Lumen中文文档" target="_blank">Lumen中文文档</a></li>
-                        <li role=presentation><a href="/specials/4" title="APP下载" target="_blank">APP下载</a></li>
+        <ul class="nav navbar-nav category">
+          <li><a href="{{ url('/') }}" title="首页">首页</a></li>
+          <li><a href="#" target="_blank">PHP</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">开源项目</a></li>
+          <li><a href="#">Laravel拓展</a></li>
+          @auth
+          <li>
+            <form class="form-inline" style="padding: 10px 15px;margin-left: 230px;">
+              <div class="form-group has-success has-feedback">
+                <input type="text" class="form-control input-sm" name="keyword" placeholder="搜索内容" value="">
+                <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+              </div>
+            </form>
+        </li>
+        @endauth</ul>
+        <ul class="nav navbar-nav navbar-right user">
+          @guest
+          <li><a href="{{ route('login') }}">登录</a></li>
+          <li><a href="{{ route('register') }}">注册</a></li>
+          @else
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }}<span class="user-avatar pull-right" style="margin-left:8px; margin-top:-5px;"><img src="https://fsdhubcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60" class="img-responsive img-circle" width="30px" height="30px"></span>
+              </a>
+
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">退出登录</a></li>
+                <li><a href="#">退出登录</a></li>
+                  <li>
+                      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">退出登录</a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                      </form>
+                  </li>
+              </ul>
+          </li>
+
+          @endguest
         </ul>
     </div>
 </div>
