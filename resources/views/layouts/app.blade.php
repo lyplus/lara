@@ -10,14 +10,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/common.css" rel="stylesheet">
+    @section('css')@show
     </head>
 <body>
 @include('layouts/_header')
 <div class="main-content">
+@include('layouts/_message')
 @yield('content')
 </div>
 @include('layouts/_footer')
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="/js/common.js"></script>
+@section('js')@show
 </body>
 </html>
