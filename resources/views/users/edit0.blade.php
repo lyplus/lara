@@ -73,9 +73,9 @@ var srcInput = $("#src-input");
 $("#img-show").Jcrop({
   allowSelect: false,
   boxWidth: 360,
-  // boxHeight:360,
-  // minSize: [ 190, 190 ],
-  // maxSize: [ 300, 300 ],
+  boxHeight:360,
+  minSize: [ 110, 110 ],
+  maxSize: [ 300, 300 ],
   onChange: getPosition     //选框改变时的事件
 },function(){
     jcropApi = this;
@@ -90,7 +90,7 @@ srcInput.change(function(){
     reader.onload=function(){
         srcImg.src = this.result;
         jcropApi.setImage(this.result);
-        jcropApi.setOptions({ setSelect : [0,0,190,190] });
+        jcropApi.setOptions({ setSelect : [230,230,30,30] });
         reader=null;
     };
 });
@@ -107,7 +107,7 @@ function preShow(x,y,w,h){
 
     var img=new Image();
     img.onload = function () {
-        cxt.drawImage(img,x,y,w,h,0,0,190,190);
+        cxt.drawImage(img,x,y,w,h,0,0,200,200);
     };
     img.src=srcImg.src;
 }
@@ -121,9 +121,7 @@ $("#upload-btn").click(function(){
         return ;
     }
     $.ajax({
-        url: "{{ route('users.avatar', $user->id) }}",
-        // url: "{{ url('users/avatar', $user->id) }}",
-
+        url: "{{ route('users.doavatar', $user->id) }}",
         type:"POST",
         data:{img:src},
         dataType:"json",
@@ -131,8 +129,7 @@ $("#upload-btn").click(function(){
         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
         },
         success:function(data){
-            // alert("保存成功");
-            window.location.href=data.route;
+            // alert("上传成功！文件名："+data);
         }
     });
 });

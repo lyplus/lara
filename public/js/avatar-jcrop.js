@@ -1673,7 +1673,7 @@
 
     shade: null,               //使用更好的遮罩
 
-    boxWidth: 0,               //画布宽度
+    boxWidth: 0,               //最大画布宽度
     boxHeight: 0,              //画布高度
     boundary: 2,               //边界。说明：可以从边界开始拖动鼠标选择裁剪区域
     fadeTime: 400,             //过度效果的时间

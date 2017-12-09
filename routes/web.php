@@ -21,8 +21,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
-Route::get('/users/{user}/avatar', 'UsersController@avatar')->name('users.avatar');
-Route::post('/users/upavatar', 'UsersController@upavatar')->name('users.upavatar');
+
+//修改头像
+Route::post('/users/{user}/avatar', 'UsersController@avatar')->name('users.avatar');
+
 
 
 

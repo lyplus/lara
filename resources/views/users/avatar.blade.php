@@ -6,41 +6,30 @@
 <meta name="_token" content="{{ csrf_token() }}"/>
 <link rel="stylesheet" href="/css/avatar-jcrop.css" type="text/css" />
 <style>
-    .jcrop-holder{
-        float:left;
-    }
+
     .pre-wrapper{
-        /*display:none;*/
+        display:none;
         float:left;
         margin-left:50px;
 
-        padding: 6px;
-        border: 1px rgba(0,0,0,.4) solid;
-        background-color: white;
-
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-
-        -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
-        box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
     }
-    .btn-wrapper{clear:both;}
-    /*#upload-btn{display:none;}*/
     .pre-show{border-radius: 50%;}
+    .btn-wrapper{clear:both;}
+    #upload-btn{display:none;}
+
 </style>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 <script src="/js/avatar-jcrop.js"></script>
 </head>
 <body>
 
-<label for="src-input">选择图片：</label><input id="src-input" type="file"/>
-<div class="img-wrapper"><img id="img-show" src="/images/avatar.png"/></div>
-<div class="pre-wrapper"><canvas class="pre-show" width="200px" height="200px"></canvas></div>
-<div class="btn-wrapper"><button id="upload-btn">上传裁剪图片</button></div>
 
+
+<div class="img-wrapper"><img id="img-show" src="/images/avatar.png"/></div>
+<div class="pre-wrapper"><canvas class="pre-show" width="190px" height="190px"></canvas></div>
+<label for="src-input">浏览</label><input id="src-input" type="file"/>
+<div class="btn-wrapper"><button id="upload-btn">上传裁剪图片</button></div>
 
 
 <script>
@@ -48,29 +37,15 @@
     var srcImg = $("#img-show")[0];
     var srcInput = $("#src-input");
     $("#img-show").Jcrop({
-        allowSelect: true,
-        allowMove: true,
-        allowResize: true,
-        baseClass: 'jcrop',
-        bgColor: 'black',
-        bgOpacity: 0.6,             //背景透明度
-        // bgFade: true,
-        aspectRatio: 1,
-        setSelect : [220,220,30,30],    //设定4个角的初始位置
-        borderOpacity: 0.4,
-        drawBorders: true,
-        dragEdges: true,
-        boxWidth: 400,
-        // fadeTime: 400,
-        // animationDelay: 20,
-        // swingSpeed: 3,
-        onChange: getPosition     //选框改变时的事件
+      allowSelect: false,
+      minSize: [ 110, 110 ],
+      onChange: getPosition     //选框改变时的事件
     },function(){
         jcropApi = this;
     });
     srcInput.change(function(){
         if(!this.files[0].name.match(/.jpg|.jpeg|.gif|.png|.bmp/i)){
-            alert("你选择的文件类型不被支持！");
+            alert("图片类型不支持");
             return ;
         }
         var reader=new FileReader();
@@ -78,6 +53,7 @@
         reader.onload=function(){
             srcImg.src = this.result;
             jcropApi.setImage(this.result);
+            jcropApi.setOptions({ setSelect : [230,230,30,30] });
             reader=null;
         };
     });
@@ -101,23 +77,18 @@
 
     $("#upload-btn").click(function(){
         var src=canvas.toDataURL("image/jpeg");
+        // var src=canvas.toDataURL();
         // alert( src);
+        if(src.length<1700){
+            alert("图片不支持");
+            return ;
+        }
         $.ajax({
-            url: "{{url('users/upavatar')}}",
+            url: "{{url('users/doavatar')}}",
             type:"POST",
-            data:{src},
+            data:{img:src},
             dataType:"json",
-            headers: {
-            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-            },
-            xhrFields: {
-                  withCredentials: true
-             },
-            crossDomain: true,
-            processData:false,
-            //mimeType:"multipart/form-data",
-            contentType: false,
-            cache: false,
+            headers: {'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')},
             success:function(data){
                 alert("上传成功！文件名："+data);
             }
