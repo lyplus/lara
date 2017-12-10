@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('medal')->nullable()->comment('勋章、头衔');
             $table->string('level')->nullable()->comment('等级');
             $table->integer('score')->default(0)->comment('积分');
-            $table->tinyInteger('status')->default(2);          //用户状态 -1小黑屋， 1待审核，2已审核
+            $table->tinyInteger('status')->default(2);          //用户状态 -1小黑屋;1待审核;2已审核
             $table->rememberToken();
             $table->timestamps();
         });

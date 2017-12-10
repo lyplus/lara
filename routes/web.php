@@ -20,13 +20,19 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 //个人中心
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
-Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
+Route::patch('/users/{user}/update', 'UsersController@update')->name('users.update');
 
 //修改头像
 Route::post('/users/{user}/avatar', 'UsersController@avatar')->name('users.avatar');
 
+//主题
+Route::get('/topics/show', 'TopicsController@show')->name('topics.show');
 
+Route::get('/topics/{topic}/add', 'TopicsController@add')->name('topics.add');
+Route::post('/topics/{topic}/create', 'TopicsController@create')->name('topics.create');
 
+Route::get('/topics/{topic}/edit', 'TopicsController@edit')->name('topics.edit');
+Route::patch('/topics/{topic}/update', 'TopicsController@update')->name('topics.update');
 
 
 

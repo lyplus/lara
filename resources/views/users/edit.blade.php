@@ -35,7 +35,7 @@
               </div>
 
           </div>
-            <form action="{{ route('users.update', $user->id) }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+            <form action="{{ route('users.update', $user->id) }}" method="POST" accept-charset="UTF-8" >
                 <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
