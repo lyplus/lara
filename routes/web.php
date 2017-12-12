@@ -25,6 +25,7 @@ Route::patch('/users/{user}/update', 'UsersController@update')->name('users.upda
 //修改头像
 Route::post('/users/{user}/avatar', 'UsersController@avatar')->name('users.avatar');
 
+
 //主题
 Route::get('/topics/show', 'TopicsController@show')->name('topics.show');
 
@@ -34,7 +35,8 @@ Route::post('/topics/{topic}/create', 'TopicsController@create')->name('topics.c
 Route::get('/topics/{topic}/edit', 'TopicsController@edit')->name('topics.edit');
 Route::patch('/topics/{topic}/update', 'TopicsController@update')->name('topics.update');
 
-
+//导航
+Route::get('/navs/{nav}', 'NavsController@show')->name('navs.show');
 
 
 

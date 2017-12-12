@@ -3,11 +3,12 @@
         <a class="logo" href="{{ url('/') }}" title="{{ env('APP_NAME', 'Laravel') }}"><img src="/images/logo.png" title="{{config('app.name')}}" alt="攻城狮123社区"></a>
         <span class="glyphicon glyphicon-option-vertical" onclick="navigation();"></span>
         <ul class="nav navbar-nav category">
-          <li><a href="{{ url('/') }}" title="首页">首页</a></li>
-          <li><a href="#" target="_blank">PHP</a></li>
-          <li><a href="#">Python</a></li>
-          <li><a href="#">开源项目</a></li>
-          <li><a href="#">Laravel拓展</a></li>
+          <li><a href="{{ url('/') }}"{!!Request::is('/')?' class="active"':''!!} title="首页">首页</a></li>
+          <li><a href="{{route('topics.show')}}"{!!Request::is('topics/show')?' class="active"':''!!}>话题</a></li>
+          <li><a href="{{route('navs.show',1)}}"{!!Request::is('navs/1*')?' class="active"':''!!}>PHP</a></li>
+          <li><a href="{{route('navs.show',2)}}"{!!Request::is('navs/2*')?' class="active"':''!!}>Python</a></li>
+          <li><a href="{{route('navs.show',3)}}"{!!Request::is('navs/3*')?' class="active"':''!!}>开源项目</a></li>
+          <li><a href="{{route('navs.show',4)}}"{!!Request::is('navs/4*')?' class="active"':''!!}>Laravel拓展</a></li>
           @auth
           <li>
             <form class="form-inline" style="padding: 10px 15px;margin-left: 230px;">

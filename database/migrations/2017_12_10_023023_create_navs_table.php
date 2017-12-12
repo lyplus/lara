@@ -15,7 +15,7 @@ class CreateNavsTable extends Migration
     {
         Schema::create('navs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->index()->comment('名称');
+            $table->string('name',20)->index()->comment('名称');
             $table->text('bio')->nullable()->comment('描述');
             $table->integer('topics')->default(0)->comment('主题数');
             $table->timestamps();

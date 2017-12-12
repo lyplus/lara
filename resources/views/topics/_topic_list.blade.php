@@ -22,7 +22,7 @@
 
                     <div class="media-body meta">
 
-                        <a href="#" title="{{ $topic->nav->name }}">
+                        <a href="{{route('navs.show',$topic->nav->id)}}" title="{{ $topic->nav->name }}">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                              {{ $topic->nav->name }}
                         </a>

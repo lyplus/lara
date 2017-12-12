@@ -12,6 +12,11 @@
     background-color:transparent !important;*/
 }
 
+.nav .active{
+  color: #009a61 !important;
+  background-color: rgba(1, 126, 102, 0.08);
+}
+
 .nav>.open>a, .nav>.open>a:focus, .nav>.open>a:hover {
   color: #009a61;
   background-color: rgba(1, 126, 102, 0.08) !important;
