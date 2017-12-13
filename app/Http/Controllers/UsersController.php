@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use App\Handlers\ImgHandler;
-
+use Auth;
 class UsersController extends Controller
 {
     public function __construct()
@@ -45,6 +45,7 @@ class UsersController extends Controller
         'email' => $request->email,
         'password' => bcrypt($request->password),
       ]);
+      Auth::login($user);  //注册成功后自动登录
       return redirect()->route('users.show',$user->id)->with('success','注册成功');
 
     }
