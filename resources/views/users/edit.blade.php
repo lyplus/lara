@@ -3,7 +3,7 @@
 @section('title')
 <title>编辑个人资料 labelaravel学习网</title>
 <meta name="keywords" content="Laravel学习网,Laravel5.5,Laravel,Laravel教程,Laravel视频" />
-<meta name="description" content="包含laravel5.5视频教程，laravel中文文档，laravel拓展包以及使用教程，致力于推动 Laravel，PHP7，composer等PHP新技术" />
+<meta name="description" content="包含laravel5.5视频教程，laravel拓展包以及使用教程，致力于推动Laravel、PHP7、composer等PHP新技术" />
 @endsection
 
 @section('css')
@@ -20,7 +20,7 @@
                 <i class="glyphicon glyphicon-edit"></i> 编辑个人资料
             </h4>
         </div>
-        @include('common.error')
+        @include('layouts/_validate_msg')
         <div class="panel-body">
           <div class="form-group col-lg-12">
             <div class="form-group pull-left">

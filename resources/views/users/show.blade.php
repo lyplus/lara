@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', $user->name . ' 的个人中心')
+@section('title')
+<title>{{ $user->name }}个人中心 labelaravel学习网</title>
+<meta name="keywords" content="Laravel学习网,Laravel5.5,Laravel,Laravel教程,Laravel视频" />
+<meta name="description" content="包含laravel5.5视频教程，laravel中文文档，laravel拓展包以及使用教程，致力于推动 Laravel，PHP7，composer等PHP新技术" />
+@stop
 
 @section('content')
 

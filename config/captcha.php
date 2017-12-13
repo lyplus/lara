@@ -13,7 +13,7 @@ return [
     ],
     // 背景颜色 文字颜色
     'flat'   => [
-        'length'    => 6,
+        'length'    => 2,  //验证码字符个数
         'width'     => 160,
         'height'    => 46,
         'quality'   => 90,

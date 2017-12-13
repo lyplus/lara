@@ -6,9 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">用户注册</div>
-
+      
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('users.create') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -66,12 +66,14 @@
 
                             <div class="col-md-6">
                                 <input id="captcha" class="form-control" name="captcha" >
+
+                                <img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
+
                                 @if ($errors->has('captcha'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('captcha') }}</strong>
                                     </span>
                                 @endif
-                                <img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
                             </div>
                         </div>
 
